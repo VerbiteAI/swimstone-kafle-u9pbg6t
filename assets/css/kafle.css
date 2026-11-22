@@ -74,3 +74,17 @@
   .hero__brands { margin-top: 18px; }
   .hero__media { min-height: 220px; }
 }
+
+/* ------------------------------------------------------------------ serwis (B) */
+:root {
+  --panel-bg: rgba(255, 255, 255, .96); --panel-fg: var(--navy); --panel-fg-2: var(--steel); --panel-line: #E3E9EF;
+  --panel-hover: #EEF3F8; --panel-hover-2: #E3ECF6; --panel-shadow: 0 50px 120px -40px rgba(11, 35, 64, .45);
+  --phero-bg: radial-gradient(45% 60% at 100% 0%, rgba(156, 195, 238, .5), rgba(156, 195, 238, 0) 65%), radial-gradient(35% 45% at 0% 0%, rgba(47, 111, 181, .06), rgba(47, 111, 181, 0) 70%), #fff;
+  --phero-bg-solid: #fff;
+  --sec-a: #fff; --sec-b: var(--mist); --sec-c: radial-gradient(55% 60% at 0% 100%, rgba(156, 195, 238, .5), rgba(156, 195, 238, 0) 65%), var(--mist);
+  --img-well: #F1F5F9; --badge-bg: #E6EFF9; --badge-fg: var(--water);
+  --added-bg: var(--navy); --added-fg: var(--white); --bridge-bg: linear-gradient(140deg in oklab, #153F72, #0B2340);
+  --cta-bg: radial-gradient(60% 70% at 0% 100%, rgba(156, 195, 238, .55), rgba(156, 195, 238, 0) 65%), var(--mist);
+  --brand-filter: none;
+}
+.pdp__brand .pl--al, .bcard__logo .pl--al { filter: brightness(0); opacity: .82; }
