@@ -1,0 +1,185 @@
+/* Wariant B „Kafle”: jasne tło, wideo w dużych zaokrąglonych kaflach, więcej informacji na ekranie. */
+
+:root {
+  --bg: var(--white);
+  --fg: var(--navy);
+  --fg-2: #3D4D5E;
+  --fg-3: var(--steel);
+  --line: #DCE3EA;
+  --line-2: #BAC7D4;
+  --hover: rgba(11, 35, 64, .05);
+  --accent: var(--water);
+  --tbc: var(--water);
+  --btn-bg: var(--navy); --btn-fg: var(--white); --btn-bg-h: var(--water);
+  --nav-fg: var(--navy); --nav-bg: rgba(255, 255, 255, .86); --nav-line: #E3E9EF;
+  --nav-logo-top: var(--navy); --nav-logo-water: var(--water);
+  --wl-top: var(--navy); --wl-water: var(--water);
+  --slot-bg: linear-gradient(160deg, #DCE7F2 0%, #CBDCEE 100%);
+  --slot-fg: var(--navy);
+  --doc-bg: #DCE7F2;
+  --map-pl: #DCE7F2; --map-pl-line: var(--water); --map-others: #F3F6F9; --map-line: #DCE3EA;
+  --dot: var(--navy); --dot-ring: rgba(47, 111, 181, .22); --tip-bg: var(--navy); --tip-fg: var(--white);
+  --chip-on-bg: var(--navy); --chip-on-fg: var(--white);
+  --field-bg: var(--white); --field-line: #CBD6E1; --ring: rgba(47, 111, 181, .18);
+  --err: #B42318;
+  --r-l: 28px; --r-m: 22px; --r-s: 16px;
+}
+
+/* hero: nagłówek na jasnym tle, wideo w kaflu do krawędzi ekranu */
+.hero { height: 100svh; min-height: 700px; display: flex; flex-direction: column; gap: 32px; padding: calc(var(--nav-h) + 36px) 0 24px; }
+.hero__text { order: 1; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); align-items: end; }
+.hero__title { grid-column: 1 / span 7; font-size: clamp(44px, 5.6vw, 84px); }
+.hero__aside { grid-column: 9 / span 4; display: grid; gap: 24px; padding-bottom: 6px; }
+.hero__lead { color: var(--fg-2); font-size: clamp(16px, 1.25vw, 18px); }
+.hero__media { order: 2; position: relative; flex: 1; min-height: 280px; width: min(100% - 2 * var(--gut), var(--maxw)); margin-inline: auto; border-radius: var(--r-l); overflow: hidden; background: var(--navy); }
+.hero__video { position: absolute; inset: 0; }
+.hero__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7, 26, 49, .5) 0%, rgba(7, 26, 49, 0) 38%); pointer-events: none; }
+.hero__bar { position: absolute; left: 16px; right: 16px; bottom: 16px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.partners { padding: 12px 22px; border-radius: 999px; background: rgba(255, 255, 255, .94); color: var(--navy); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.partners__label { color: var(--steel); }
+.hero .pl--al { filter: brightness(0); opacity: .82; }
+.hero__ctrl { padding: 6px 6px 6px 18px; border-radius: 999px; background: rgba(7, 26, 49, .55); color: var(--white); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.vbtn { border-color: rgba(255, 255, 255, .5); }
+
+/* oferta: trzy kafle z opisem pod wideo */
+.offer { background: var(--mist); padding-bottom: 64px; }
+.offer__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); width: min(100% - 2 * var(--gut), var(--maxw)); margin: 48px auto 0; }
+.card { padding: 10px; border-radius: var(--r-m); background: var(--white); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.card:hover { transform: translateY(-2px); box-shadow: 0 24px 48px -28px rgba(11, 35, 64, .35); }
+.card__media { aspect-ratio: 16 / 10; border-radius: var(--r-s); background: var(--navy); }
+.card__media video { position: absolute; inset: 0; }
+.card__body { display: flex; flex-direction: column; flex: 1; padding: 22px 16px 14px; }
+.card__more { margin-top: auto; padding-top: 18px; color: var(--water); }
+
+/* liczby: jasne tło, nagranie na linii wody jako szeroki pas */
+.stats { display: flex; flex-direction: column; background: var(--white); }
+.stats__inner { order: 1; display: grid; gap: 64px; }
+.stats__media { order: 2; position: relative; width: min(100% - 2 * var(--gut), var(--maxw)); height: clamp(180px, 22svh, 260px); margin: 48px auto 0; border-radius: var(--r-l); overflow: hidden; background: var(--navy); }
+.stats__media video { width: 100%; height: 100%; object-fit: cover; }
+.stats__shade { display: none; }
+
+/* realizacje */
+.cases { background: var(--mist); }
+.case { padding: 10px 10px 22px; border-radius: var(--r-m); background: var(--white); gap: 20px; }
+.case__media, .slot { border-radius: var(--r-s); }
+.case__body { padding: 0 12px; }
+.map { padding: 0; }
+.cases__list { padding: 28px; border-radius: var(--r-m); background: var(--white); }
+
+/* od akwenu do sezonu */
+.proc { background: var(--white); }
+.proc__frame { border-radius: var(--r-l); }
+
+/* sport: tekst i kafel z pływakiem z góry */
+.sport { background: var(--mist); }
+.sport__media { display: none; }
+.sport__grid { align-items: stretch; }
+.sport__text { grid-column: 1 / span 5; }
+.timer { grid-column: 7 / span 6; position: relative; align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; min-height: 560px; padding: 0; overflow: hidden; border-radius: var(--r-l); background: var(--navy); color: var(--white); }
+.timer__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.timer__panel { position: relative; margin: 16px; padding: 22px 24px 20px; border-radius: var(--r-s); background: rgba(255, 255, 255, .95); color: var(--navy); }
+.timer__panel .timer__time { color: var(--navy); }
+.timer.is-done .timer__time { color: var(--water); }
+
+/* dla kogo */
+.who { background: var(--white); }
+.who__col { padding: 30px 28px 28px; border-radius: var(--r-m); background: var(--mist); }
+.who__col li { border-color: #D6DEE7; }
+
+/* kontakt */
+.contact { background: var(--mist); }
+.contact__media { display: none; }
+.contact__text .lake { margin-top: 36px; height: 220px; border-radius: var(--r-m); overflow: hidden; background: var(--navy); }
+.contact__text .lake video { width: 100%; height: 100%; object-fit: cover; }
+.form { background: var(--white); }
+
+/* stopka */
+.footer { background: var(--white); --logo-top: var(--navy); --logo-water: var(--water); }
+
+@media (max-width: 1023px) {
+  .hero { gap: 24px; }
+  .hero__title, .hero__aside { grid-column: 1 / -1; }
+  .hero__aside { margin-top: 20px; }
+  .offer__grid { grid-template-columns: 1fr; }
+  .card__media { aspect-ratio: 16 / 10; }
+  .sport__text, .timer { grid-column: 1 / -1; }
+  .timer { min-height: 460px; }
+}
+@media (max-width: 767px) {
+  .hero { min-height: 640px; padding-top: calc(var(--nav-h) + 24px); }
+  .hero__actions .btn { flex: 1; }
+  .hero__bar { left: 10px; right: 10px; bottom: 10px; }
+  .partners { border-radius: 18px; padding: 12px 16px; }
+  .hero__ctrl { position: absolute; right: 0; top: -210px; padding: 0; background: none; }
+  .vbtn { background: rgba(7, 26, 49, .55); }
+  .cases__list { padding: 20px; }
+}
+.map { border-radius: var(--r-m); overflow: hidden; }
+@media (max-width: 767px) {
+  .hero .partners__label { display: none; }
+  .hero .partners { padding: 10px 14px; }
+  .hero .partners__logos { gap: 16px; }
+  .hero .pl--ag { height: 13px; } .hero .pl--ml { height: 17px; } .hero .pl--al { height: 12px; }
+}
+
+/* ------------------------------------------------------------------ gradienty 2026 (B) */
+:root {
+  --btn-grad: linear-gradient(115deg in oklab, #0B2340 0%, #153F72 40%, #2F6FB5 75%, #0B2340 100%);
+  --btn-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 14px 30px -16px rgba(47, 111, 181, .8);
+  --btn-shadow-h: inset 0 1px 0 rgba(255, 255, 255, .16), 0 18px 36px -14px rgba(47, 111, 181, .95);
+  --edge: linear-gradient(140deg, rgba(47, 111, 181, .45), rgba(156, 195, 238, .12) 45%, rgba(47, 111, 181, .3));
+  --wl-grad: linear-gradient(90deg in oklab, #2F6FB5 0%, #7FB0E6 100%);
+  --map-g1: #E8F0F9; --map-g2: #C3D8EF;
+  --slot-bg:
+    radial-gradient(80% 70% at 88% 12%, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0) 60%),
+    radial-gradient(70% 80% at 8% 100%, rgba(47, 111, 181, .38), rgba(47, 111, 181, 0) 65%),
+    linear-gradient(160deg in oklab, #DCE7F2, #BFD5EE);
+  --doc-bg:
+    radial-gradient(70% 70% at 90% 10%, #FFFFFF, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(70% 70% at 0% 100%, rgba(47, 111, 181, .3), rgba(47, 111, 181, 0) 65%),
+    #D6E4F2;
+  --grain-o: .05;
+}
+.menu .btn--primary { --btn-grad: linear-gradient(115deg in oklab, #FFFFFF 0%, #EEF5FD 40%, #BCD8F5 70%, #FFFFFF 100%); --btn-fg: var(--navy); --btn-shadow: none; }
+.btn--ghost { border-color: transparent; background: linear-gradient(#fff, #fff) padding-box, linear-gradient(120deg, rgba(47, 111, 181, .6), rgba(156, 195, 238, .35) 50%, rgba(47, 111, 181, .45)) border-box; }
+.hero { background:
+    radial-gradient(45% 55% at 100% 0%, rgba(156, 195, 238, .5), rgba(156, 195, 238, 0) 65%),
+    radial-gradient(35% 45% at 0% 0%, rgba(47, 111, 181, .08), rgba(47, 111, 181, 0) 70%),
+    #fff; }
+.hero__shade { background: linear-gradient(0deg in oklab, rgba(7, 26, 49, .55) 0%, rgba(47, 111, 181, .12) 30%, rgba(7, 26, 49, 0) 45%); }
+.offer { background:
+    radial-gradient(55% 65% at 0% 0%, rgba(156, 195, 238, .55), rgba(156, 195, 238, 0) 60%),
+    radial-gradient(50% 60% at 100% 100%, rgba(47, 111, 181, .14), rgba(47, 111, 181, 0) 65%),
+    var(--mist); }
+.card, .case, .cases__list { background: linear-gradient(180deg in oklab, #FFFFFF 0%, #F6F9FD 100%); box-shadow: inset 0 0 0 1px rgba(47, 111, 181, .08); }
+.stats { background: radial-gradient(45% 55% at 100% 0%, rgba(156, 195, 238, .35), rgba(156, 195, 238, 0) 70%), #fff; }
+.stats__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg in oklab, rgba(11, 35, 64, .35), rgba(47, 111, 181, 0) 45%); pointer-events: none; }
+.cases { background:
+    radial-gradient(55% 35% at 100% 0%, rgba(156, 195, 238, .55), rgba(156, 195, 238, 0) 65%),
+    radial-gradient(50% 35% at 0% 62%, rgba(47, 111, 181, .12), rgba(47, 111, 181, 0) 65%),
+    var(--mist); }
+.proc { background: radial-gradient(45% 35% at 0% 15%, rgba(156, 195, 238, .4), rgba(156, 195, 238, 0) 70%), #fff; }
+.sport { background:
+    radial-gradient(55% 70% at 100% 100%, rgba(47, 111, 181, .16), rgba(47, 111, 181, 0) 65%),
+    radial-gradient(50% 60% at 0% 0%, rgba(156, 195, 238, .5), rgba(156, 195, 238, 0) 65%),
+    var(--mist); }
+.timer::after { display: none; }
+.timer__panel { background: linear-gradient(160deg in oklab, rgba(255, 255, 255, .97), rgba(238, 245, 252, .94)); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.who { background: radial-gradient(50% 60% at 100% 0%, rgba(156, 195, 238, .4), rgba(156, 195, 238, 0) 70%), #fff; }
+.who__col { background: linear-gradient(160deg in oklab, #F4F8FC 0%, #E3ECF6 100%); }
+.contact { background:
+    radial-gradient(60% 70% at 0% 100%, rgba(156, 195, 238, .55), rgba(156, 195, 238, 0) 65%),
+    radial-gradient(50% 50% at 100% 0%, rgba(47, 111, 181, .12), rgba(47, 111, 181, 0) 70%),
+    var(--mist); }
+.form { background: linear-gradient(170deg in oklab, #FFFFFF 0%, #F5F9FD 100%); }
+.footer { background: radial-gradient(70% 55% at 50% 115%, rgba(156, 195, 238, .55), rgba(156, 195, 238, 0) 70%), #fff; }
+/* gradientowa obwódka kafli, mocniejsza po najechaniu */
+.case, .who__col, .cases__list { position: relative; }
+.card::after, .case::after, .who__col::after, .cases__list::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(150deg, rgba(156, 195, 238, .9), rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%, rgba(47, 111, 181, .35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: .8; transition: opacity .3s;
+}
+.card:hover::after { opacity: 1; background: linear-gradient(150deg, rgba(47, 111, 181, .9), rgba(156, 195, 238, .3) 45%, rgba(47, 111, 181, .7)); }
